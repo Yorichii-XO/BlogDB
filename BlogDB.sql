@@ -1,0 +1,13 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE role (id_role INT PRIMARY KEY, type_role VARCHAR(20));
+INSERT INTO role VALUES(1,'Admin');
+CREATE TABLE article (Id_article INT PRIMARY KEY, Titre_article VARCHAR(20), Date_public_articlr DATE);
+INSERT INTO article VALUES(1,'Article 1','2024-05-03');
+CREATE TABLE utilisateur (Id_u INT PRIMARY KEY,Nom_u VARCHAR(20),description_u VARCHAR(50),Email_u VARCHAR(30),id_role INT,id_article INT,FOREIGN KEY(id_role)REFERENCES role(id_role),FOREIGN KEY(id_article)REFERENCES articale(Id_articale));
+INSERT INTO utilisateur VALUES(1,'JohnDoe','Description1','john@example.com',1,1);
+CREATE TABLE commentaire (Id_commentaire INT PRIMARY KEY, Description_commentaire VARCHAR(70), Id_articale INT, Id_u INT, FOREIGN KEY (Id_articale) REFERENCES article(Id_article), FOREIGN KEY (Id_u) REFERENCES utilisateur(Id_utilisateur));
+INSERT INTO commentaire VALUES(1,'Comment 1',1,1);
+CREATE TABLE categorie(Id_c INT primary key,Nom_c VARCHAR(10));
+CREATE TABLE article_categorie(Id_ac INT PRIMARY KEY, Id_article INT, Id_c INT, FOREIGN KEY (Id_article) REFERENCES article(Id_article), FOREIGN KEY (Id_c) REFERENCES categorie(Id_c));
+COMMIT;

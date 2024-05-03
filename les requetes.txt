@@ -1,0 +1,25 @@
+//inserer
+INSERT INTO utilisateur (Id_utilisateur, Nom_utilisateur, description_utilisateur, Email_utilisateur, id_role, id_article) VALUES (1, 'John', 'Software Engineer', 'john@example.com', 1, 123);
+//afficher
+SELECT * FROM utilisateur;
+//update
+UPDATE utilisateur SET Nom_utilisateur = 'JaneDoe' WHERE Id_utilisateur = 1;
+//delete
+DELETE FROM utilisateur WHERE Id_utilisateur = 1;
+
+#######Role#######
+SELECT * FROM role;
+INSERT INTO role (id_role, type_role) VALUES (1, 'Admin');
+UPDATE role SET type_role = 'SuperAdmin' WHERE id_role = 1;
+DELETE FROM role WHERE id_role = 1;
+#####article######
+SELECT * FROM article;INSERT INTO article (Id_article, Titre_article, Date_public_articlr) VALUES (1, 'Sample Article', '2024-05-03');
+INSERT INTO article (Id_article, Titre_article, Date_public_articlr) VALUES (1, 'Sample Article', '2024-05-03');
+UPDATE article SET Titre_article = 'Updated Article' WHERE Id_article = 1;
+DELETE FROM article WHERE Id_article = 1;
+######commentaire#####
+SELECT * FROM commentaire;
+INSERT INTO commentaire (Id_commentaire, Description_commentaire, Id_articale, Id_utilisateur) VALUES (1, 'Sample comment', 1, 1);
+UPDATE commentaire SET Description_commentaire = 'Updated comment' WHERE Id_commentaire = 1;
+DELETE FROM commentaire WHERE Id_commentaire = 1;
+#
